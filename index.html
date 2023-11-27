@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+<h2><center>Aetena LLC - Property Value Information</center></h2>
+<!--<h3><center>11/22/2023 10:07PM</center></h3>-->
+<h3><center><span id="date"></span>
+<span id="clock"></span>
+</center></h3>
+<table style="width:100%">
+  <tr>
+    <th>Address</th>
+    <th>Type</th>
+    <th>Size</th>
+    <th>Rooms</th> <!-- bedroom/bathrooms-->
+    <th>Price Est</th>
+    <th>Price Change</th> <!--change in last 30 day-->
+    <th>Rent Est</th>
+    <th>Rent Change</th> <!--change in last 30 day-->
+  </tr>
+  <tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/191-Sandhill-Crane-Ave-Henderson-NV-89002/53379958_zpid/
+">191 Sandhill Crane Ave, Henderson NV</a></td><td>Single Family</td><td>1490 sq ft</td><td>2 bedroom/2 bathroom</td><td>$409,400</td><td>+$767</td><td>$2,014</td><td>+$15</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/9176-Spoonbill-Ridge-Pl-Las-Vegas-NV-89143/61354869_zpid/">9176 Spoonbill Ridge Pl, Las Vegas NV</a></td><td>Single Family</td><td>1358 sq ft</td><td>3 bedroom/2.5 bathroom</td><td>$347,000</td><td>-$473</td><td>$1,822</td><td>+$1,822</td></tr>
+
+  <tr></tr>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <td>Total</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>$756,400</td>
+    <td>-</td>
+    <td>$3,836</td>
+    <td>-</td>
+  </tr>
+
+</table>
+<p>Click each property to dig down more information like current lease/occupancy info</p>
+<p>Click "Refresh" button (Ctrl+R) to get the up-to-date info</p>
+</body>
+<script language=""javascript">
+    (function () {
+        var clockElement = document.getElementById( "clock" );
+        function updateClock ( clock ) {
+          clock.innerHTML = new Date().toLocaleTimeString();
+        }
+        setInterval(function () {
+            updateClock( clockElement );
+        }, 1000);
+         n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+      }());
+    </script> 
+</html>
