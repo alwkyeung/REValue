@@ -5,6 +5,12 @@
 table, th, td {
   border:1px solid black;
 }
+th {
+  cursor: pointer;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
 </style>
 <body>
 <h2><center>Aetena LLC - Property Value Information</center></h2>
@@ -12,56 +18,131 @@ table, th, td {
 <h3><center><span id="date"></span>
 <span id="clock"></span>
 </center></h3>
-<table style="width:100%">
+<table id="myTable" style="width:100%">
   <tr>
-    <th>Address</th>
-    <th>Type</th>
-    <th>Size</th>
-    <th>Rooms</th> <!-- bedroom/bathrooms-->
-    <th>Price Est</th>
-    <th>Price Change</th> <!--change in last 30 day-->
-    <th>Rent Est</th>
-    <th>Rent Change</th> <!--change in last 30 day-->
+    <th onclick="sortTable(0)"><u>Address</u><span>&#8597;</span></th> <!-- show sorting up&down symbol -->
+    <th onclick="sortTable(1)"><u>Type</u><span>&#8597;</span></th>
+    <th onclick="sortTable(2)"><u>Size</u><span>&#8597;</span></th>
+    <th onclick="sortTable(3)"><u>Rooms</u><span>&#8597;</span></th> <!-- bedroom/bathrooms-->
+    <th onclick="sortTable(4)"><u>Price Est</u><span>&#8597;</span></th>
+    <th onclick="sortTable(5)"><u>Price Change</u><span>&#8597;</span></th> <!--change in last 30 day-->
+    <th onclick="sortTable(6)"><u>Rent Est</u><span>&#8597;</span></th>
+    <th onclick="sortTable(7)"><u>Rent Change</u><span>&#8597;</span></th> <!--change in last 30 day-->
   </tr>
-  <tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/1459-Lavender-Loop-Milpitas-CA-95035/2083411158_zpid/
+">1459 Lavender Loop, Milpitas CA</a></td><td>Townhouse</td><td>1631 sq ft</td><td>3 bedroom/2.5 bathroom</td><td>$1,337,600</td><td>+$52,280</td><td>$3,900</td><td>-$49</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/1441-Valley-Ave-Pleasanton-CA-94566/58879248_zpid/
+">1441 Valley Ave, Pleasanton CA</a></td><td>Single Family</td><td>2780 sq ft</td><td>4 bedroom/2.5 bathroom</td><td>$2,066,300</td><td>-$59,400</td><td>$5,338</td><td>-$55</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/326-Whisper-Wood-Way-Lebanon-TN-37087/2072828595_zpid/
+">326 Whisper Wood Way, Lebanon TN</a></td><td>Single Family</td><td>2344 sq ft</td><td>4 bedroom/2.5 bathroom</td><td>$373,100</td><td>-$2,593</td><td>$2,435</td><td>+$47</td></tr>
 <tr>
 <td><a href="https://www.zillow.com/homedetails/191-Sandhill-Crane-Ave-Henderson-NV-89002/53379958_zpid/
 ">191 Sandhill Crane Ave, Henderson NV</a></td><td>Single Family</td><td>1490 sq ft</td><td>2 bedroom/2 bathroom</td><td>$409,400</td><td>+$767</td><td>$2,014</td><td>+$15</td></tr>
 <tr>
-<td><a href="https://www.zillow.com/homedetails/9176-Spoonbill-Ridge-Pl-Las-Vegas-NV-89143/61354869_zpid/">9176 Spoonbill Ridge Pl, Las Vegas NV</a></td><td>Single Family</td><td>1358 sq ft</td><td>3 bedroom/2.5 bathroom</td><td>$347,000</td><td>-$473</td><td>$1,822</td><td>+$1,822</td></tr>
+<td><a href="https://www.zillow.com/homedetails/9176-Spoonbill-Ridge-Pl-Las-Vegas-NV-89143/61354869_zpid/
+">9176 Spoonbill Ridge Pl, Las Vegas NV</a></td><td>Single Family</td><td>1358 sq ft</td><td>3 bedroom/2.5 bathroom</td><td>$345,700</td><td>-$1,727</td><td>$1,822</td><td>+$1,822</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/9817-Fountain-Walk-Ave-Las-Vegas-NV-89149/66844662_zpid/
+">9817 Fountain Walk Ave, Las Vegas NV</a></td><td>Single Family</td><td>1342 sq ft</td><td>3 bedroom/2.5 bathroom</td><td>$333,900</td><td>-$1,820</td><td>$1,889</td><td>+$95</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/3824-Hunters-Trl-Mesquite-TX-75150/27143605_zpid/
+">3824 Hunters Trl, Mesquite TX</a></td><td>Single Family</td><td>1719 sq ft</td><td>3 bedroom/2 bathroom</td><td>$288,300</td><td>+$1,287</td><td>$2,102</td><td>+$3</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/6912-Oaklawn-Sachse-TX-75048/26661990_zpid/
+">6912 Oaklawn, Sachse TX</a></td><td>Single Family</td><td>2609 sq ft</td><td>4 bedroom/2.5 bathroom</td><td>$453,300</td><td>+$1,880</td><td>$2,999</td><td>+$114</td></tr>
+<tr>
+<td><a href="https://www.zillow.com/homedetails/9300-Hunter-Chase-Dr-McKinney-TX-75070/62611326_zpid/">9300 Hunter Chase Dr, Mckinney TX</a></td><td>Single Family</td><td>2989 sq ft</td><td>5 bedroom/3 bathroom</td><td>$534,100</td><td>-$1,840</td><td>$3,200</td><td>+$86</td></tr>
 
-  <tr></tr>
-  <tr></tr>
-  <tr></tr>
   <tr>
     <td>Total</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>$756,400</td>
+    <td>$6,141,700</td>
     <td>-</td>
-    <td>$3,836</td>
+    <td>$25,699</td>
     <td>-</td>
   </tr>
 
 </table>
-<p>Click each property to dig down more information like current lease/occupancy info</p>
+<p>Click each column heading to sort the property table</p>
+<p>Click each property address/link to dig down more information like current lease/occupancy info</p>
 <p>Click "Refresh" button (Ctrl+R) to get the up-to-date info</p>
 </body>
 <script language=""javascript">
-    (function () {
-        var clockElement = document.getElementById( "clock" );
-        function updateClock ( clock ) {
-          clock.innerHTML = new Date().toLocaleTimeString();
+  (function () {
+      var clockElement = document.getElementById( "clock" );
+      function updateClock ( clock ) {
+        clock.innerHTML = new Date().toLocaleTimeString();
+      }
+      setInterval(function () {
+          updateClock( clockElement );
+      }, 1000);
+        n =  new Date();
+      y = n.getFullYear();
+      m = n.getMonth() + 1;
+      d = n.getDate();
+      document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+    }());
+  
+  function sortTable(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("myTable");
+    switching = true;
+
+    //Set the sorting direction to ascending:
+    dir = "asc"; 
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 1; i < (rows.length - 2); i++) {
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("td")[n];
+        y = rows[i + 1].getElementsByTagName("td")[n];
+        /*check if the two rows should switch place,
+        based on the direction, asc or desc:*/
+        if (dir == "asc") {
+          //console.log(x.innerHTML, y.innerHTML)
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch= true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
         }
-        setInterval(function () {
-            updateClock( clockElement );
-        }, 1000);
-         n =  new Date();
-        y = n.getFullYear();
-        m = n.getMonth() + 1;
-        d = n.getDate();
-        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-      }());
-    </script> 
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        //Each time a switch is done, increase this count by 1:
+        switchcount ++;      
+      } else {
+        /*If no switching has been done AND the direction is "asc",
+        set the direction to "desc" and run the while loop again.*/
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
+</script> 
 </html>
